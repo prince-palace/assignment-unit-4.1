@@ -80,9 +80,18 @@ console.log("my breakfast sandwich had:", getLast(sandwich));
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
-function find(value, array) {
 
+function find(value, array) {
+  for (let item of array){
+    if (item === value) {
+      return true;
+    }
+  }
+  return false;
 }
+
+console.log("My breakfast sandwich had avocado:", find("avocado", sandwich));
+console.log("My breakfast sandwich had avocado:", find("cream cheese", sandwich));
 
 // ----------------------
 // Stretch Goals
