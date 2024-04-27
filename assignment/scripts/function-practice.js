@@ -5,50 +5,77 @@ console.log('***** Function Practice *****');
 // to test it and display the result
 
 // 1. Function to return 'Hello World!'
-function hello() {
+function helloWorld() {
   return 'Hello World!';
 }
 // Call the function to test
-console.log('Test - should say "Hello World!"', hello());
+console.log('Test - should say "Hello World!"', helloWorld());
 
 
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
-function helloName(name) {
-  return 'Hello, ' + name + '!';
+
+function helloName(myName) {
+  let greeting = "Well, hello " + myName;
+  return greeting;
 }
+
 // Remember to call the function to test
-console.log('helloName function', helloName('Cal'));
+
+console.log("helloName('Cal'):", helloName('Cal'))
 
 // 3. Function to add two numbers together & return the result
-function addNumbers(firstNumber) {
-  // return firstNumber + secondNumber;
+
+function addNumbers(num1, num2) {
+  let theSum = num1 += num2;
+  return theSum;
 }
 
+let theAnswer = addNumbers(5, 7);
+console.log("theAnswer (should be 12)", theAnswer);
 
 // 4. Function to multiply three numbers & return the result
-function multiplyThree() {
 
+function multiplyThree(num1, num2, num3) {
+  let theProduct = num1 * num2 * num3;
+  return theProduct;
 }
 
+let thisAnswer = multiplyThree(5, 7, 12);
+console.log("theAnswer (should be big)", thisAnswer);
 
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
+
 function isPositive(number) {
   if (number > 0) {
-    return;
+    return true;
   }
-  return;
+  else return false;
 }
 // Call the function to test each outcome (true & false) 
 // Write a separate console.log statement for each outcome
 
+console.log("the number is positive: ", isPositive(-5));
+console.log("the number is positive: ", isPositive(7));
 
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
-function getLast(array) {
 
+function getLast(array) {
+  console.log(array.length);
+  if (array.length > 0) {
+    let index = array.length - 1;
+    return array[index];
+  }
+  else if (array.length === 0) {
+    return undefined;
+  }
+  
 }
+
+let sandwich = ["asiago bagel", "cream cheese" , "egg"];
+console.log("my breakfast sandwich had:", getLast(sandwich));
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
